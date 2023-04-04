@@ -5,22 +5,19 @@
 }
 
 main {
-  background-color: #ffffff;
-  color: #000000;
-  min-height: 100%;
+  background-color: #151515;
+  color: white;
+  min-height: 100vh;
   p {
     margin: 0;
   }
 }
-
 ::-webkit-scrollbar {
-  width: 7px;
+  width: 8px;
 }
-
 ::-webkit-scrollbar-track {
-  background: #ffffff;
+  background: #151515;
 }
-
 ::-webkit-scrollbar-thumb {
   background: #868686;
   border-radius: 40px;
