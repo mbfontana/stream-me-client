@@ -1,13 +1,60 @@
+@import "../../../../styles/colors.module.scss";
 
 .ctaHeaderTop {
-    background-color: #777;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 4px 0px;
-    gap: 40px;
+  background-color: $lightRed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 0px;
+  gap: 40px;
 }
 
 .ctaImageTop {
-    width: 20px;
+  width: 20px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.navLogo {
+  width: 180px;
+}
+
+.navButton {
+  margin: 0px 5px;
+  border-color: transparent;
+  color: $lightGray;
+  &:hover {
+    color: white;
+    border-color: $lightRed;
+    background-color: transparent;
+  }
+}
+
+@media (max-width: 442px) {
+  .nav {
+    justify-content: center;
+  }
+  .navButton {
+    margin: 16px 10px;
+    border-color: white;
+    font-size: 14px;
+  }
+  .ctaHeaderTop {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 329px) {
+  .ctaHeaderTop {
+    text-align: center;
+  }
+  .ctaImageTop {
+    margin: 0px 8px;
+  }
 }
