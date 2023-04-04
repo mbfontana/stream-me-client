@@ -5,9 +5,15 @@
 }
 
 main {
+<<<<<<< HEAD
   background-color: #151515;
   color: white;
   min-height: 100vh;
+=======
+  background-color: #190C15;
+  color: #fff;
+  min-height: 100%;
+>>>>>>> b344d1453f1153fea0aea88214b1f4c80a4177ee
   p {
     margin: 0;
   }
@@ -16,7 +22,11 @@ main {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
+<<<<<<< HEAD
   background: #151515;
+=======
+  background: #190C15;
+>>>>>>> b344d1453f1153fea0aea88214b1f4c80a4177ee
 }
 ::-webkit-scrollbar-thumb {
   background: #868686;
