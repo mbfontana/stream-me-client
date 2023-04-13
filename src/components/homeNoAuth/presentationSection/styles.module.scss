@@ -1,0 +1,59 @@
+@import "../../../../styles/colors.module.scss";
+
+.presentationRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.subtitle {
+  font-size: 18px;
+  font-weight: bold;
+  color: $lightRed;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 50px;
+}
+
+.description {
+  font-size: 20px;
+  color: $lightGray;
+  margin: 20px 0px 40px 0px;
+}
+
+.btnCta {
+  font-weight: bold;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 14px 30px;
+  border: 2px solid $lightRed;
+
+  &:hover {
+    background-color: transparent;
+    border-color: $darkRed;
+    color: $lightGray;
+  }
+}
+
+.btnImg {
+  width: 11px;
+}
+
+.imgPresentation {
+  width: 550px;
+}
+
+.arrowDownCol {
+  display: flex;
+  justify-content: center;
+  padding-top: 60px;
+}
+
+.arrowDown {
+  width: 30px;
+}
