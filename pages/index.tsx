@@ -13,8 +13,10 @@ const HomeNoAuth = () => {
         <meta name="description" content="INSERT LATER" />
       </Head>
       <main>
-        <HeaderNoAuth />
-        <PresentationSection />
+        <div className={styles.headerBackground}>
+          <HeaderNoAuth />
+          <PresentationSection />
+        </div>
       </main>
     </>
   );
