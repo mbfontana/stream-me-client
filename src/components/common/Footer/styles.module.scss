@@ -1,0 +1,35 @@
+@import "../../../../styles/colors.module.scss";
+
+.footerCtn {
+  padding: 20px 0;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footerHeadline {
+  font-size: 14px;
+}
+
+.footerIcon {
+  width: 22px;
+  transition: 0.2s;
+  filter: invert(100%) sepia(97%) saturate(0%) hue-rotate(149deg)
+    brightness(121%) contrast(100%);
+
+  &:hover {
+    cursor: pointer;
+    filter: invert(87%) sepia(6%) saturate(99%) hue-rotate(314deg)
+      brightness(93%) contrast(90%);
+  }
+}
+
+.iconsCta {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
