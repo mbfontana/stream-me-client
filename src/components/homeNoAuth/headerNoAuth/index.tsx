@@ -5,7 +5,7 @@ import Link from "next/link";
 const HeaderNoAuth = () => {
   return (
     <>
-      <div className={styles.ctaHeaderTop}>
+      {/* <div className={styles.ctaHeaderTop}>
         <img
           src="/homeNoAuth/logoCta.png"
           alt="Logo CTA"
@@ -17,7 +17,7 @@ const HeaderNoAuth = () => {
           alt="Logo CTA"
           className={styles.ctaImageTop}
         />
-      </div>
+      </div> */}
       <Container className={styles.nav}>
         <img src="./logo.svg" alt="logo" className={styles.navLogo} />
         <div>

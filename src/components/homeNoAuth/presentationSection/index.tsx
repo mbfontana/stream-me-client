@@ -10,7 +10,7 @@ const PresentationSection = () => {
           <Col md>
             <p className={styles.subtitle}>ILIMITED ACCESS</p>
             <p className={styles.title}>
-              Give your carrer a boost with <br /> our top courses courses
+              Give your carrer a boost with <br /> our top courses
             </p>
             <p className={styles.description}>
               Study everywhere, anytime, and take your skills <br /> to the next

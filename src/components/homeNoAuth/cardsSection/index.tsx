@@ -8,32 +8,32 @@ type Course = {
 
 const coursesList: Course[] = [
   {
-    title: "Provisory",
+    title: "FRONT-END",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati voluptatum maiores ab, atque iure inventore vel culpa exercitationem sed eos adipisci magnam dolor at necessitatibus unde id eius, totam explicabo.,",
   },
   {
-    title: "Provisory",
+    title: "BACK-END",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati voluptatum maiores ab, atque iure inventore vel culpa exercitationem sed eos adipisci magnam dolor at necessitatibus unde id eius, totam explicabo.,",
   },
   {
-    title: "Provisory",
+    title: "MOBILE",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati voluptatum maiores ab, atque iure inventore vel culpa exercitationem sed eos adipisci magnam dolor at necessitatibus unde id eius, totam explicabo.,",
   },
   {
-    title: "Provisory",
+    title: "GIT",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati voluptatum maiores ab, atque iure inventore vel culpa exercitationem sed eos adipisci magnam dolor at necessitatibus unde id eius, totam explicabo.,",
   },
   {
-    title: "Provisory",
+    title: "PROJECTS",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati voluptatum maiores ab, atque iure inventore vel culpa exercitationem sed eos adipisci magnam dolor at necessitatibus unde id eius, totam explicabo.,",
   },
   {
-    title: "Provisory",
+    title: "CAREER",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati voluptatum maiores ab, atque iure inventore vel culpa exercitationem sed eos adipisci magnam dolor at necessitatibus unde id eius, totam explicabo.,",
   },
