@@ -42,6 +42,17 @@
     text-transform: none;
   }
 }
+.inputCheckbox{
+  @extend .input;
+  margin-top: 6px;
+}
+.rememberMeInput {
+  margin-top: 1px;
+}
+.rememberMeLabel {
+  margin-left: 10px;
+  font-size: 15px;
+}
 .formBtn {
   display: block;
   margin: 50px auto 0 auto;
