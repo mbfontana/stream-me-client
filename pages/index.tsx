@@ -21,6 +21,15 @@ const HomeNoAuth = ({ courses }: IndexPageProps) => {
     AOS.init();
   }, []);
 
+  const mockedCourses = [
+    { id: 1, name: "Mock 1", thumbnailUrl: "", synopsis: "Mocked synopsis" },
+    { id: 2, name: "Mock 2", thumbnailUrl: "", synopsis: "Mocked synopsis" },
+    { id: 3, name: "Mock 3", thumbnailUrl: "", synopsis: "Mocked synopsis" },
+    { id: 4, name: "Mock 4", thumbnailUrl: "", synopsis: "Mocked synopsis" },
+    { id: 5, name: "Mock 5", thumbnailUrl: "", synopsis: "Mocked synopsis" },
+    { id: 6, name: "Mock 6", thumbnailUrl: "", synopsis: "Mocked synopsis" },
+  ];
+
   return (
     <>
       <Head>
@@ -42,7 +51,7 @@ const HomeNoAuth = ({ courses }: IndexPageProps) => {
           <CardsSection />
         </div>
         <div data-aos="fade-up" data-aos-duration="1200">
-          <SlideSection courses={courses} />
+          <SlideSection courses={mockedCourses} />
         </div>
 
         <Footer />
