@@ -17,7 +17,7 @@ const PresentationSection = () => {
               level
             </p>
             <p>
-              <Link href="/register" className="btnLink">
+              <Link href="/register" className="text-decoration-none">
                 <Button outline className={styles.btnCta}>
                   ACCESS NOW
                   <img

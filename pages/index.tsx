@@ -21,21 +21,12 @@ const HomeNoAuth = ({ courses }: IndexPageProps) => {
     AOS.init();
   }, []);
 
-  const mockedCourses = [
-    { id: 1, name: "Mock 1", thumbnailUrl: "", synopsis: "Mocked synopsis" },
-    { id: 2, name: "Mock 2", thumbnailUrl: "", synopsis: "Mocked synopsis" },
-    { id: 3, name: "Mock 3", thumbnailUrl: "", synopsis: "Mocked synopsis" },
-    { id: 4, name: "Mock 4", thumbnailUrl: "", synopsis: "Mocked synopsis" },
-    { id: 5, name: "Mock 5", thumbnailUrl: "", synopsis: "Mocked synopsis" },
-    { id: 6, name: "Mock 6", thumbnailUrl: "", synopsis: "Mocked synopsis" },
-  ];
-
   return (
     <>
       <Head>
         <title>Stream Me</title>
         <link rel="shortcut icon" href="/favicon.svg" type="image/x-icon" />
-        <meta property="og:title" content="GenericFlix" key="title" />
+        <meta property="og:title" content="Stream Me" key="title" />
         <meta name="description" content="INSERT LATER" />
       </Head>
       <main>
@@ -51,7 +42,7 @@ const HomeNoAuth = ({ courses }: IndexPageProps) => {
           <CardsSection />
         </div>
         <div data-aos="fade-up" data-aos-duration="1200">
-          <SlideSection courses={mockedCourses} />
+          <SlideSection courses={courses} />
         </div>
 
         <Footer />
