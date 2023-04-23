@@ -15,6 +15,15 @@ const Login = () => {
   const [toastColor, setToastColor] = useState("");
 
   useEffect(() => {
+    if (
+      sessionStorage.getItem("streamMe-token") ||
+      localStorage.getItem("streamMe-token")
+    ) {
+      router.push("/home");
+    }
+  }, []);
+
+  useEffect(() => {
     const registerSuccess = router.query.registered;
     if (registerSuccess === "true") {
       setToastColor("bg-success");

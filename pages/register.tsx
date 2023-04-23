@@ -4,7 +4,7 @@ import styles from "../styles/registerLogin.module.scss";
 import Head from "next/head";
 import { Container, Form, FormGroup, Label, Input, Button } from "reactstrap";
 import Footer from "@/src/components/common/Footer";
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import authService from "@/src/services/authService";
 import { useRouter } from "next/router";
 import ToastComponent from "@/src/components/common/Toast";
@@ -14,6 +14,15 @@ const Register = () => {
   const [toastIsOpen, setToastIsOpen] = useState(false);
   const [toastMessage, setToastMessage] = useState("");
   const toastDelay = 1000 * 4; // 4 seconds
+
+  useEffect(() => {
+    if (
+      sessionStorage.getItem("streamMe-token") ||
+      localStorage.getItem("streamMe-token")
+    ) {
+      router.push("/home");
+    }
+  }, []);
 
   const handleRegister = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
