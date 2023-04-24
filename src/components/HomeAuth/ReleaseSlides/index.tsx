@@ -4,7 +4,7 @@ import styles from "./styles.module.scss";
 import { Container } from "reactstrap";
 import Slides from "../../common/Slides";
 
-const ReleasesSection = () => {
+const ReleaseSlides = () => {
   const { data, error } = useSWR("/releases", courseService.getReleases);
 
   if (error) return error;
@@ -22,4 +22,4 @@ const ReleasesSection = () => {
   );
 };
 
-export default ReleasesSection;
+export default ReleaseSlides;

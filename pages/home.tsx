@@ -1,6 +1,7 @@
-import FavoritesSection from "@/src/components/HomeAuth/FavoritesSection";
-import FeaturedSection from "@/src/components/HomeAuth/FeaturedSection";
-import ReleasesSection from "@/src/components/HomeAuth/ReleasesSection";
+import FavoriteSlides from "@/src/components/HomeAuth/FavoriteSlides";
+import FeaturedBanner from "@/src/components/HomeAuth/FeaturedBanner";
+import FeaturedSlides from "@/src/components/HomeAuth/FeaturedSlides";
+import ReleaseSlides from "@/src/components/HomeAuth/ReleaseSlides";
 import Head from "next/head";
 
 const Home = () => {
@@ -11,9 +12,10 @@ const Home = () => {
         <link rel="shortcut icon" href="/favicon.svg" type="image/x-icon" />
       </Head>
       <main>
-        <FeaturedSection />
-        <ReleasesSection />
-        <FavoritesSection />
+        <FeaturedBanner />
+        <ReleaseSlides />
+        <FavoriteSlides />
+        <FeaturedSlides />
       </main>
     </>
   );

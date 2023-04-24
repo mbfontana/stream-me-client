@@ -5,7 +5,7 @@ import HeaderAuth from "../../common/HeaderAuth";
 import { Button, Container } from "reactstrap";
 import Link from "next/link";
 
-const FeaturedSection = () => {
+const FeaturedBanner = () => {
   const { data, error } = useSWR("/featured", courseService.getFeatured);
 
   if (error) return error;
@@ -54,4 +54,4 @@ const FeaturedSection = () => {
   );
 };
 
-export default FeaturedSection;
+export default FeaturedBanner;
