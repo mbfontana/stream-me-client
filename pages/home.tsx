@@ -1,3 +1,4 @@
+import FavoritesSection from "@/src/components/HomeAuth/FavoritesSection";
 import FeaturedSection from "@/src/components/HomeAuth/FeaturedSection";
 import ReleasesSection from "@/src/components/HomeAuth/ReleasesSection";
 import Head from "next/head";
@@ -12,6 +13,7 @@ const Home = () => {
       <main>
         <FeaturedSection />
         <ReleasesSection />
+        <FavoritesSection />
       </main>
     </>
   );
