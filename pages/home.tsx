@@ -3,6 +3,7 @@ import FavoriteSlides from "@/src/components/HomeAuth/FavoriteSlides";
 import FeaturedBanner from "@/src/components/HomeAuth/FeaturedBanner";
 import FeaturedSlides from "@/src/components/HomeAuth/FeaturedSlides";
 import ReleaseSlides from "@/src/components/HomeAuth/ReleaseSlides";
+import Footer from "@/src/components/common/Footer";
 import Head from "next/head";
 
 const Home = () => {
@@ -18,6 +19,7 @@ const Home = () => {
         <FavoriteSlides />
         <FeaturedSlides />
         <CategorySection />
+        <Footer />
       </main>
     </>
   );

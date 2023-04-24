@@ -4,10 +4,7 @@ import CategorySlides from "../CategorySlides";
 import { Container } from "reactstrap";
 
 const CategorySection = () => {
-  const { data, error } = useSWR(
-    "/categories",
-    categoryService.getAllCategories
-  );
+  const { data, error } = useSWR("/categories", categoryService.getAll);
 
   if (error) return error;
   if (!data)
