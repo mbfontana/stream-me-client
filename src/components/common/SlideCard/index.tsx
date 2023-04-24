@@ -4,11 +4,8 @@ import styles from "./styles.module.scss";
 interface props {
   course: CourseType;
 }
-var aux = 0;
+
 const SlideCard = ({ course }: props) => {
-  console.log(aux);
-  aux++;
-  console.log(course);
   return (
     <div className={styles.slide}>
       <img
