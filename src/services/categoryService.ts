@@ -9,7 +9,7 @@ export type CategoryType = {
 };
 
 const categoryService = {
-  getAllCategories: async () => {
+  getAll: async () => {
     const token =
       localStorage.getItem("streamMe-token") ||
       sessionStorage.getItem("streamMe-token");

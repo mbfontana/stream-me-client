@@ -1,3 +1,4 @@
+import CategorySection from "@/src/components/HomeAuth/CategorySection";
 import FavoriteSlides from "@/src/components/HomeAuth/FavoriteSlides";
 import FeaturedBanner from "@/src/components/HomeAuth/FeaturedBanner";
 import FeaturedSlides from "@/src/components/HomeAuth/FeaturedSlides";
@@ -16,6 +17,7 @@ const Home = () => {
         <ReleaseSlides />
         <FavoriteSlides />
         <FeaturedSlides />
+        <CategorySection />
       </main>
     </>
   );
