@@ -20,21 +20,63 @@ export type CourseType = {
 const courseService = {
   getReleases: async () => {
     const res = await api.get("/courses/releases").catch((error) => {
-      console.log(error.response.data.message);
       return error.response;
     });
     return res;
   },
   getFeatured: async () => {
-    const token = localStorage.getItem("streamMe-token")
-      ? localStorage.getItem("streamMe-token")
-      : sessionStorage.getItem("streamMe-token");
+    const token =
+      localStorage.getItem("streamMe-token") ||
+      sessionStorage.getItem("streamMe-token");
     const res = await api
       .get("/courses/featured", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .catch((error) => {
-        console.log(error.response.data.message);
+        return error.response;
+      });
+    return res;
+  },
+  addFavorite: async (courseId: number) => {
+    const token =
+      localStorage.getItem("streamMe-token") ||
+      sessionStorage.getItem("streamMe-token");
+    const res = await api
+      .post(
+        "/favorites",
+        { courseId },
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      )
+      .catch((error) => {
+        return error.response;
+      });
+    return res;
+  },
+  removeFavorite: async (courseId: number) => {
+    const token =
+      localStorage.getItem("streamMe-token") ||
+      sessionStorage.getItem("streamMe-token");
+    const res = await api
+      .delete("/favorites", {
+        headers: { Authorization: `Bearer ${token}` },
+        data: { courseId },
+      })
+      .catch((error) => {
+        return error.response;
+      });
+    return res;
+  },
+  getFavorites: async () => {
+    const token =
+      localStorage.getItem("streamMe-token") ||
+      sessionStorage.getItem("streamMe-token");
+    const res = await api
+      .get("/favorites", {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .catch((error) => {
         return error.response;
       });
     return res;
