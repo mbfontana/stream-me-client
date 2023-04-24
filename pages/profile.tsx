@@ -13,11 +13,13 @@ const Profile = () => {
         <link rel="shortcut icon" href="/favicon.svg" type="image/x-icon" />
       </Head>
       <main>
-        <HeaderAuth />
+        <div className={styles.header}>
+          <HeaderAuth />
+        </div>
         <Container className="py-5">
           <p className={styles.title}>My Account</p>
           <Row className="pt-3 pb-5">
-            <Col md={4}>
+            <Col md={4} className={styles.btnColumn}>
               <Button outline className={styles.renderFormBtn}>
                 PROFILE
               </Button>
@@ -25,7 +27,7 @@ const Profile = () => {
                 PASSWORD
               </Button>
             </Col>
-            <Col md style={{ marginTop: "-60px" }}>
+            <Col md>
               <UserForm />
             </Col>
           </Row>
