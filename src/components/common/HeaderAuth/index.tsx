@@ -1,15 +1,25 @@
 import { Container, Form, Input } from "reactstrap";
 import styles from "./styles.module.scss";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Modal from "react-modal";
 import { useRouter } from "next/router";
+import profileService from "@/src/services/profileService";
 
 Modal.setAppElement("#__next");
 
 const HeaderAuth = () => {
   const [modalOpen, setModalOpen] = useState(false);
+  const [userInitials, setUserInitials] = useState("");
   const router = useRouter();
+
+  useEffect(() => {
+    profileService.getCurrentUser().then((user) => {
+      const firstInitial = user.firstName.charAt(0);
+      const lastInitial = user.lastName.charAt(0);
+      setUserInitials(firstInitial + lastInitial);
+    });
+  }, []);
 
   const handleLogout = () => {
     sessionStorage.removeItem("streamMe-token");
@@ -45,7 +55,7 @@ const HeaderAuth = () => {
           className={styles.userProfile}
           onClick={() => setModalOpen(!modalOpen)}
         >
-          AB
+          {userInitials}
         </p>
       </div>
       <Modal
