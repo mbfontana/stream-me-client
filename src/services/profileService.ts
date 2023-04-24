@@ -6,7 +6,12 @@ export type UserParams = {
   phone: string;
   email: string;
   createdAt: string;
-}
+};
+
+export type PasswordParams = {
+  currentPassword: string;
+  newPassword: string;
+};
 
 const profileService = {
   getCurrentUser: async () => {
@@ -31,6 +36,23 @@ const profileService = {
 
     const res = await api
       .put("/users/account", params, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .catch((error) => {
+        if (error.response.status === 400 || error.response.status === 401)
+          return error.response;
+        return error;
+      });
+
+    return res.status;
+  },
+  updatePassword: async (params: PasswordParams) => {
+    const token =
+      localStorage.getItem("streamMe-token") ||
+      sessionStorage.getItem("streamMe-token");
+
+    const res = await api
+      .put("/users/account/password", params, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .catch((error) => {
