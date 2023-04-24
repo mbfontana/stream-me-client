@@ -1,4 +1,5 @@
 import FeaturedSection from "@/src/components/HomeAuth/FeaturedSection";
+import ReleasesSection from "@/src/components/HomeAuth/ReleasesSection";
 import Head from "next/head";
 
 const Home = () => {
@@ -10,6 +11,7 @@ const Home = () => {
       </Head>
       <main>
         <FeaturedSection />
+        <ReleasesSection />
       </main>
     </>
   );
