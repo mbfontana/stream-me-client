@@ -4,8 +4,11 @@ import styles from "../styles/profile.module.scss";
 import UserForm from "@/src/components/Profile/UserForm";
 import HeaderAuth from "@/src/components/common/HeaderAuth";
 import { Button, Col, Container, Row } from "reactstrap";
+import { useState } from "react";
+import PasswordForm from "@/src/components/Profile/Password";
 
 const Profile = () => {
+  const [form, setForm] = useState<"profile" | "password">("profile");
   return (
     <>
       <Head>
@@ -20,16 +23,24 @@ const Profile = () => {
           <p className={styles.title}>My Account</p>
           <Row className="pt-3 pb-5">
             <Col md={4} className={styles.btnColumn}>
-              <Button outline className={styles.renderFormBtn}>
+              <Button
+                outline
+                className={styles.renderFormBtn}
+                style={{ color: form === "profile" ? "#FF0A54" : "#fff" }}
+                onClick={() => setForm("profile")}
+              >
                 PROFILE
               </Button>
-              <Button outline className={styles.renderFormBtn}>
+              <Button
+                outline
+                className={styles.renderFormBtn}
+                style={{ color: form === "password" ? "#FF0A54" : "#fff" }}
+                onClick={() => setForm("password")}
+              >
                 PASSWORD
               </Button>
             </Col>
-            <Col md>
-              <UserForm />
-            </Col>
+            <Col md>{form === "profile" ? <UserForm /> : <PasswordForm />}</Col>
           </Row>
         </Container>
         <Footer />

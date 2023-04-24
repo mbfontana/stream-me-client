@@ -1,6 +1,5 @@
 import { Button, Form, FormGroup, Input, Label } from "reactstrap";
 import styles from "../../../../styles/profile.module.scss";
-import useSWR from "swr";
 import profileService, { UserParams } from "@/src/services/profileService";
 import { FormEvent, useEffect, useState } from "react";
 import ToastComponent from "../../common/Toast";
