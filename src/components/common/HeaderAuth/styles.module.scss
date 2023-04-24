@@ -57,7 +57,7 @@
 
 .modal {
   position: absolute;
-  width: 150px;
+  width: 180px;
   height: 80px;
   top: 75px;
   right: 10%;
@@ -92,6 +92,20 @@
   }
 }
 
+.modalOptContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.modalIcon {
+  width: 20px;
+  cursor: pointer;
+  filter: invert(100%) sepia(97%) saturate(0%) hue-rotate(149deg)
+    brightness(121%) contrast(100%);
+}
+
 @media (max-width: 769px) {
   .userProfile {
     margin: 0;
@@ -108,4 +122,3 @@
     top: 140px;
   }
 }
-

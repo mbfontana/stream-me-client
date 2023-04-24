@@ -56,11 +56,23 @@ const HeaderAuth = () => {
         overlayClassName={styles.overlayModal}
       >
         <Link href="/profile" className="text-decoration-none">
-          <p className={styles.modalLink}>My Account</p>
+          <div className={styles.modalOptContainer}>
+            <img
+              src="/icons/profile.svg"
+              alt="Profile Icon"
+              className={styles.modalIcon}
+            />
+            <p className={styles.modalLink}>My Account</p>
+          </div>
         </Link>
-        <p className={styles.modalLink} onClick={handleLogout}>
-          Logout
-        </p>
+        <div className={styles.modalOptContainer} onClick={handleLogout}>
+          <img
+            src="/icons/logout.svg"
+            alt="Logout Icon"
+            className={styles.modalIcon}
+          />
+          <p className={styles.modalLink}>Logout</p>
+        </div>
       </Modal>
     </Container>
   );
