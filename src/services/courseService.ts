@@ -81,6 +81,19 @@ const courseService = {
       });
     return res;
   },
+  search: async (searchName: string) => {
+    const token =
+      localStorage.getItem("streamMe-token") ||
+      sessionStorage.getItem("streamMe-token");
+    const res = await api
+      .get(`/courses/search?search=${searchName}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .catch((error) => {
+        return error.response;
+      });
+    return res;
+  },
 };
 
 export default courseService;

@@ -1,7 +1,7 @@
 import { Container, Form, Input } from "reactstrap";
 import styles from "./styles.module.scss";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import Modal from "react-modal";
 import { useRouter } from "next/router";
 import profileService from "@/src/services/profileService";
@@ -11,7 +11,19 @@ Modal.setAppElement("#__next");
 const HeaderAuth = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [userInitials, setUserInitials] = useState("");
+  const [searchName, setSearchName] = useState("");
   const router = useRouter();
+
+  const handleSearchBar = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    router.push(`/search?name=${searchName}`);
+    setSearchName("");
+  };
+
+  const handleSearchClick = () => {
+    router.push(`/search?name=${searchName}`);
+    setSearchName("");
+  };
 
   useEffect(() => {
     profileService.getCurrentUser().then((user) => {
@@ -37,18 +49,21 @@ const HeaderAuth = () => {
         />
       </Link>
       <div className={styles.searchContainer}>
-        <Form>
+        <Form onSubmit={handleSearchBar}>
           <Input
             name="search"
             type="search"
             placeholder="Search"
             className={styles.input}
+            value={searchName}
+            onChange={(event) => setSearchName(event.target.value)}
           />
         </Form>
         <img
           src="/homeAuth/iconSearch.svg"
-          alt="Serach Icon"
+          alt="Search Icon"
           className={styles.searchImg}
+          onClick={handleSearchClick}
         />
         <p
           id="modalParent"

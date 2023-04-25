@@ -61,7 +61,7 @@ const UserForm = () => {
 
   return (
     <>
-      <Form onSubmit={handleUserUpdate}>
+      <Form onSubmit={handleUserUpdate} className={styles.form}>
         <div className={styles.formName}>
           <p className={styles.nameAbbreviation}>
             {`${firstName.charAt(0)}${lastName.charAt(0)}`}
