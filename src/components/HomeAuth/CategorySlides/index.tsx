@@ -3,6 +3,7 @@ import useSWR from "swr";
 import Slides from "../../common/Slides";
 import { Container } from "reactstrap";
 import styles from "./styles.module.scss";
+import LoadingSpinner from "../../common/LoadingSpinner";
 
 interface props {
   id: number;
@@ -15,12 +16,7 @@ const CategorySlides = ({ id, name }: props) => {
   );
 
   if (error) return error;
-  if (!data)
-    return (
-      <>
-        <p>Loading...</p>
-      </>
-    );
+  if (!data) return <LoadingSpinner />;
 
   return (
     <Container fluid className="d-flex flex-column align-items-center">

@@ -3,17 +3,13 @@ import styles from "./styles.module.scss";
 import courseService, { CourseType } from "@/src/services/courseService";
 import Slides from "../../common/Slides";
 import { Container } from "reactstrap";
+import LoadingSpinner from "../../common/LoadingSpinner";
 
 const FeaturedSlides = () => {
   const { data, error } = useSWR("/featured", courseService.getFeatured);
 
   if (error) return error;
-  if (!data)
-    return (
-      <>
-        <p>Loading...</p>
-      </>
-    );
+  if (!data) return <LoadingSpinner />;
 
   return (
     <>

@@ -1,18 +1,13 @@
 import useSWR from "swr";
 import categoryService, { CategoryType } from "@/src/services/categoryService";
 import CategorySlides from "../CategorySlides";
-import { Container } from "reactstrap";
+import LoadingSpinner from "../../common/LoadingSpinner";
 
 const CategorySection = () => {
   const { data, error } = useSWR("/categories", categoryService.getAll);
 
   if (error) return error;
-  if (!data)
-    return (
-      <>
-        <p>Loading...</p>
-      </>
-    );
+  if (!data) return <LoadingSpinner />;
 
   return (
     <>
