@@ -39,11 +39,12 @@ const PresentationSection = () => {
         </Row>
         <Row>
           <Col className={styles.arrowDownCol}>
-            <img
+            {/* <img
               src="./homeNoAuth/iconArrowDown.svg"
               alt="Scroll Arrow Down"
               className={styles.arrowDown}
-            />
+            /> */}
+            <span className={styles.scrollDownAnim}></span>
           </Col>
         </Row>
       </Container>
