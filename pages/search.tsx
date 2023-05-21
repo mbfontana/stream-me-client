@@ -4,6 +4,9 @@ import HeaderAuth from "@/src/components/common/HeaderAuth";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import courseService, { CourseType } from "@/src/services/courseService";
+import SearchCard from "@/src/components/SearchCard";
+import { Container } from "reactstrap";
+import Footer from "@/src/components/common/Footer";
 
 const Search = () => {
   const [searchResult, setSearchResult] = useState<CourseType[]>([]);
@@ -25,13 +28,24 @@ const Search = () => {
         <title>Stream Me | {searchName}</title>
         <link rel="shortcut icon" href="/favicon.svg" type="image/x-icon" />
       </Head>
-      <main>
-        <HeaderAuth />
-        {searchResult.map((course) => (
-          <div key={course.id}>
-            <p>{course.name}</p>
+      <main className={styles.main}>
+        <div className={styles.headerFooterBg}>
+          <HeaderAuth />
+        </div>
+        {searchResult.length > 0 ? (
+          <div className={styles.searchResults}>
+            <Container className="d-flex flex-wrap justify-content-center gap-5 py-5">
+              {searchResult.map((course) => (
+                <SearchCard key={course.id} course={course} />
+              ))}
+            </Container>
           </div>
-        ))}
+        ) : (
+          <p className={styles.notFoundText}>Not Found</p>
+        )}
+        <div className={styles.headerFooterBg}>
+          <Footer />
+        </div>
       </main>
     </>
   );

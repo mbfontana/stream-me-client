@@ -1,0 +1,19 @@
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.searchResults {
+  flex: 1 0 auto;
+}
+
+.notFoundText {
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+  padding: 60px;
+}
+
+.headerFooterBg {
+  background-color: black;
+}
