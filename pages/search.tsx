@@ -33,7 +33,7 @@ const Search = () => {
           <HeaderAuth />
         </div>
         {searchResult.length > 0 ? (
-          <div className={styles.searchResults}>
+          <div className={styles.searchContainer}>
             <Container className="d-flex flex-wrap justify-content-center gap-5 py-5">
               {searchResult.map((course) => (
                 <SearchCard key={course.id} course={course} />
@@ -41,7 +41,9 @@ const Search = () => {
             </Container>
           </div>
         ) : (
-          <p className={styles.notFoundText}>Not Found</p>
+          <div className={styles.searchContainer}>
+            <p className={styles.notFoundText}>Not Found</p>
+          </div>
         )}
         <div className={styles.headerFooterBg}>
           <Footer />

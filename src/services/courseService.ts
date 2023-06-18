@@ -81,12 +81,55 @@ const courseService = {
       });
     return res;
   },
+  getCourse: async (id: number | string) => {
+    const token =
+      localStorage.getItem("streamMe-token") ||
+      sessionStorage.getItem("streamMe-token");
+    const res = await api
+      .get(`/courses/${id}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .catch((error) => {
+        return error.response;
+      });
+    return res;
+  },
   search: async (searchName: string) => {
     const token =
       localStorage.getItem("streamMe-token") ||
       sessionStorage.getItem("streamMe-token");
     const res = await api
       .get(`/courses/search?search=${searchName}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .catch((error) => {
+        return error.response;
+      });
+    return res;
+  },
+  like: async (id: number | string) => {
+    const token =
+      localStorage.getItem("streamMe-token") ||
+      sessionStorage.getItem("streamMe-token");
+    const res = await api
+      .post(
+        "/likes",
+        { courseId: id },
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      )
+      .catch((error) => {
+        return error.response;
+      });
+    return res;
+  },
+  removeLike: async (id: number | string) => {
+    const token =
+      localStorage.getItem("streamMe-token") ||
+      sessionStorage.getItem("streamMe-token");
+    const res = await api
+      .delete(`/likes/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .catch((error) => {
