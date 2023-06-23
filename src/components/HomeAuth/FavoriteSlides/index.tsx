@@ -10,10 +10,11 @@ const FavoriteSlides = () => {
 
   if (error) return error;
   if (!data) return <LoadingSpinner />;
+
   return (
     <Container fluid className="d-flex flex-column align-items-center">
       <p className={styles.title}>MY LIST</p>
-      {data.data.courses.length > 1 ? (
+      {data.data.courses.length > 0 ? (
         <Slides courses={data.data.courses} />
       ) : (
         <p className="py-2">Try to add courses to your favorites list</p>

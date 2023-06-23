@@ -37,7 +37,7 @@ const courseService = {
       });
     return res;
   },
-  addFavorite: async (courseId: number) => {
+  addFavorite: async (courseId: number | string) => {
     const token =
       localStorage.getItem("streamMe-token") ||
       sessionStorage.getItem("streamMe-token");
@@ -54,7 +54,7 @@ const courseService = {
       });
     return res;
   },
-  removeFavorite: async (courseId: number) => {
+  removeFavorite: async (courseId: number | string) => {
     const token =
       localStorage.getItem("streamMe-token") ||
       sessionStorage.getItem("streamMe-token");
