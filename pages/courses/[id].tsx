@@ -110,13 +110,15 @@ const CoursePage = () => {
           <p className={styles.episodeDivision}>EPISODES</p>
           <p className={styles.numberOfEpisodes}>{course.episodes?.length}</p>
           {course.episodes?.length === 0 ? (
-            <p>
-              Soon new episodes! &#x1F604;
-            </p>
+            <p>Soon new episodes! &#x1F604;</p>
           ) : (
             <>
               {course.episodes?.map((episode) => (
-                <EpisodesList key={episode.id} episode={episode} />
+                <EpisodesList
+                  key={episode.id}
+                  episode={episode}
+                  courseId={course.id}
+                />
               ))}
             </>
           )}

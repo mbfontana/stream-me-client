@@ -15,7 +15,7 @@ const HeaderGeneric = ({ logoUrl, btnUrl, btnContent }: props) => {
         <Link href={logoUrl}>
           <img
             src="./logo.svg"
-            alt="Register Logo"
+            alt="Logo"
             className={styles.headerLogo}
           />
         </Link>

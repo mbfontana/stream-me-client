@@ -1,11 +1,15 @@
 import { EpisodeType } from "@/src/services/courseService";
 import styles from "./styles.module.scss";
+import { useRouter } from "next/router";
 
 interface props {
   episode: EpisodeType;
+  courseId: number;
 }
 
-const EpisodesList = ({ episode }: props) => {
+const EpisodesList = ({ episode, courseId }: props) => {
+  const router = useRouter();
+
   const convertSecondsToMinutes = (totalSeconds: number) => {
     const minutes = Math.floor(totalSeconds / 60);
     const seconds = totalSeconds % 60;
@@ -17,8 +21,12 @@ const EpisodesList = ({ episode }: props) => {
     return `${addPadding(minutes)}:${addPadding(seconds)}`;
   };
 
+  const handleEpidoseClick = () => {
+    router.push(`/courses/episode/${episode.order - 1}?courseId=${courseId}`);
+  };
+
   return (
-    <div className={styles.episodeCard}>
+    <div className={styles.episodeCard} onClick={handleEpidoseClick}>
       <div className={styles.episodeOrderTime}>
         <p className={styles.episodeOrder}>Episode {episode.order}</p>
         <p className={styles.episodeTime}>
